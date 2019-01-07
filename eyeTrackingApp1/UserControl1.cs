@@ -162,8 +162,40 @@ namespace eyeTrackingApp1
         {
             public Image image;
             public int category;
-            public string color;
+            public int color;
         }
+
+        /*------------------------------------------*/
+        /*                 ※重要※                 */
+        /*                                          */
+        /*[メインパス][カテゴリ名][色]を格納した配列*/
+        /*------------------------------------------*/
+        enum Category
+        {
+            Shirt,
+            Pant,
+            Shoes,
+
+            MAX_CATEGORY
+        }
+
+        enum Color
+        {
+            Red,
+            Blue,
+            Green,
+            White,
+            Black,
+            Other,
+
+            MAX_COLOR
+        }
+
+        static string MAIN_PATH = @"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out";
+        static string[] CATEGORY_NAME = new string[(int)Category.MAX_CATEGORY] {"シャツ", "ズボン", "シューズ" };
+        static string[] COLOR_NAME = new string[(int)Color.MAX_COLOR] { "赤", "青", "緑", "白", "黒", "その他" };
+
+        
 
         Random r = new Random();
 
@@ -181,24 +213,57 @@ namespace eyeTrackingApp1
         static int BOX_HEIGHT = MAX_HEIGHT / HEIGHT_RATIO; //4
         static int BOX_WIDTH = MAX_WIDTH / WIDTH_RATIO;   //6
 
-        const int MAX_CATEGORY = 3;
+        //const int MAX_CATEGORY = 3;
+        //const int MAX_COLOR = 6;
 
         /*カテゴリナンバー*/
+        /*
         const int CATEGORY_SHIRT = 1;
         const int CATEGORY_PANT = 2;
         const int CATEGORY_SHOES = 3;
+        */
 
         /*カラーネーム*/
         const string COLOR_RED = "red";
 
         /*各カテゴリーの画像ファイル名配列とインデックス変数*/
-        string[] shirt_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\シャツ", "*.jpg", System.IO.SearchOption.AllDirectories);
-        //string[] shirt_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_test_out\シャツ", "*.jpg", System.IO.SearchOption.AllDirectories);
-        string[] pant_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\ズボン", "*.jpg", System.IO.SearchOption.AllDirectories);
-        string[] shoes_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\シューズ", "*.jpg", System.IO.SearchOption.AllDirectories);
+        //string[] shirt_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\シャツ", "*.jpg", System.IO.SearchOption.AllDirectories);
+        //string[] shirt_files = System.IO.Directory.GetFiles(Path.Combine(MAIN_PATH, @"シャツ\黒"), "*.jpg", System.IO.SearchOption.AllDirectories);
+        //string[] pant_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\ズボン", "*.jpg", System.IO.SearchOption.AllDirectories);
+        //string[] shoes_files = System.IO.Directory.GetFiles(@"C:\Users\takami\OneDrive\実験関連\数理情報工学\画像認識\photo_out\シューズ", "*.jpg", System.IO.SearchOption.AllDirectories);
         int shirt_count = 0;
         int pant_count = 0;
-        int onepiece_count = 0;
+        int shoes_count = 0;
+
+        string[][] shirt_files =
+        {
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.Red]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.Blue]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.Green]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.White]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.Black]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shirt], COLOR_NAME[(int)Color.Other]), "*.jpg", SearchOption.AllDirectories)
+        };
+
+        string[][] pant_files =
+        {
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.Red]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.Blue]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.Green]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.White]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.Black]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Pant], COLOR_NAME[(int)Color.Other]), "*.jpg", SearchOption.AllDirectories)
+        };
+
+        string[][] shoes_files =
+        {
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.Red]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.Blue]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.Green]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.White]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.Black]), "*.jpg", SearchOption.AllDirectories),
+            Directory.GetFiles(Path.Combine(MAIN_PATH, CATEGORY_NAME[(int)Category.Shoes], COLOR_NAME[(int)Color.Other]), "*.jpg", SearchOption.AllDirectories)
+        };
 
         /*パネルに表示される画像一枚に対する詳細データリスト*/
         List<Image_Property> image_property = new List<Image_Property>();
@@ -214,6 +279,9 @@ namespace eyeTrackingApp1
         public static List<Image_Proportion> image_proportion_pant = new List<Image_Proportion>();
         public static List<Image_Proportion> image_proportion_shoes = new List<Image_Proportion>();
         public static List<Image_Proportion> image_proportion_all = new List<Image_Proportion>();
+        static double change_shirt_image_count = 0;
+        static double change_pant_image_count = 0;
+        static double change_shoes_image_count = 0;
         static double change_image_count = 0;
         
         private void Shirt_Click(object sender, EventArgs e)
@@ -232,8 +300,9 @@ namespace eyeTrackingApp1
             Controls.Add(panel);
             panel.BringToFront();
 
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < 1; i++)
             {
+                writeLog(""+i);
                 panel.Refresh();
                 Eye_Tracking(image_proportion_shirt, image_proportion_all, panel);
             }
@@ -262,16 +331,19 @@ namespace eyeTrackingApp1
             panel.Paint += new PaintEventHandler(this.Pant_Panel_Paint);
             Controls.Add(panel);
             panel.BringToFront();
-            panel.Refresh();
 
-            Eye_Tracking(image_proportion_pant, image_proportion_all, panel);
-
+            for(int i = 0; i < 3; i++)
+            {
+                panel.Refresh();
+                Eye_Tracking(image_proportion_pant, image_proportion_all, panel);
+            }
+            
             panel.Hide(); //コントロール（パネル）を消去
 
             Cursor.Show();
         }
 
-        private void Onepiece_Click(object sender, EventArgs e)
+        private void Shoes_Click(object sender, EventArgs e)
         {
             Cursor.Hide();
             textBox_Log.ResetText();
@@ -280,12 +352,15 @@ namespace eyeTrackingApp1
             Panel panel = new Panel();
             panel.Location = new Point(0, 0);
             panel.Size = new System.Drawing.Size(MAX_WIDTH, MAX_HEIGHT);
-            panel.Paint += new PaintEventHandler(this.Onepiece_Panel_Paint);
+            panel.Paint += new PaintEventHandler(this.Shoes_Panel_Paint);
             Controls.Add(panel);
             panel.BringToFront();
-            panel.Refresh();
 
-            Eye_Tracking(image_proportion_shoes, image_proportion_all, panel);
+            for (int i = 0; i < 3; i++)
+            {
+                panel.Refresh();
+                Eye_Tracking(image_proportion_shoes, image_proportion_all, panel);
+            }
 
             panel.Hide(); //コントロール（パネル）を消去
 
@@ -304,9 +379,12 @@ namespace eyeTrackingApp1
             panel.Paint += new PaintEventHandler(this.All_Panel_Paint);
             Controls.Add(panel);
             panel.BringToFront();
-            panel.Refresh();
 
-            Eye_Tracking(image_proportion_all, image_proportion_all, panel);
+            for (int i = 0; i < 3; i++)
+            {
+                panel.Refresh();
+                Eye_Tracking(image_proportion_all, image_proportion_all, panel);
+            }
 
             panel.Hide(); //コントロール（パネル）を消去
 
@@ -321,12 +399,27 @@ namespace eyeTrackingApp1
             var host = new Host();
             var gazePointDataStream = host.Streams.CreateGazePointDataStream();
             int point;
+            int category_flag = 0;
             bool same = false; //finish = false;
             
             Gaze[] gaze = new Gaze[BOX_HEIGHT * BOX_WIDTH];
 
-            if (proportion == all_proportion)
+            
+            if(proportion == image_proportion_shirt)
             {
+                category_flag = (int)Category.Shirt;
+            }
+            else if(proportion == image_proportion_pant)
+            {
+                category_flag = (int)Category.Pant;
+            }
+            else if(proportion == image_proportion_shoes)
+            {
+                category_flag = (int)Category.Shoes;
+            }
+            else if (proportion == all_proportion)
+            {
+                category_flag = (int)Category.MAX_CATEGORY;
                 same = true;
                 writeLog("同じ");
             }
@@ -358,7 +451,7 @@ namespace eyeTrackingApp1
                     }
                 });
 
-                //System.Threading.Thread.Sleep(15000);
+                //System.Threading.Thread.Sleep(15000); //測定時間
 
                 System.Threading.Thread.Sleep(3000);
 
@@ -378,12 +471,29 @@ namespace eyeTrackingApp1
                 {
                     if (gaze[a].count != 0)
                     {
+                        switch (category_flag)
+                        {
+                        case (int)Category.Shirt :
+                            change_shirt_image_count += gaze[a].count;
+                            break;
+
+                        case (int)Category.Pant :
+                            change_pant_image_count += gaze[a].count;
+                            break;
+
+                        case (int)Category.Shoes :
+                            change_shoes_image_count += gaze[a].count;
+                            break;
+                        }
+
                         change_image_count += gaze[a].count;
                     }
                 }
 
-                Data_Registration(gaze, proportion);
-                if (!same) Data_Registration(gaze, all_proportion);
+                /*見られた画像の割合を更新*/
+                Data_Registration(gaze, proportion, category_flag);
+                if (!same) Data_Registration(gaze, all_proportion, (int)Category.MAX_CATEGORY);
+
                 //System.Threading.Thread.Sleep(100);
                 //finish = Finish_Gudge();
                 //System.Threading.Thread.Sleep(100);
@@ -398,16 +508,32 @@ namespace eyeTrackingApp1
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+
+            /*トップ3位を登録*/
+            top_image_property.Add(image_property[Get_Point(gaze, 0)]);
+            top_image_property.Add(image_property[Get_Point(gaze, 1)]);
+            top_image_property.Add(image_property[Get_Point(gaze, 2)]);
+
+            pictureBox1.Image = top_image_property[0].image;
+            pictureBox2.Image = top_image_property[1].image;
+            pictureBox3.Image = top_image_property[2].image;
+
+            writeLog("カテゴリ : " + top_image_property[0].category);
+            writeLog("カラー : " + top_image_property[0].color);
+            /*
             pictureBox1.Image = image_property[Get_Point(gaze, 0)].image;
             pictureBox2.Image = image_property[Get_Point(gaze, 1)].image;
             pictureBox3.Image = image_property[Get_Point(gaze, 2)].image;
             writeLog("カテゴリ : " + image_property[Get_Point(gaze, 0)].category);
             writeLog("カラー : " + image_property[Get_Point(gaze, 0)].color);
+            */
 
             /*トップ3位を登録*/
+            /*
             top_image_property.Add(image_property[0]);
             top_image_property.Add(image_property[1]);
             top_image_property.Add(image_property[2]);
+            */
             //pictureBox1.Image = img[gaze[0].y, gaze[0].x];  //最も見られた画像を出力
             //pictureBox2.Image = img[gaze[1].y, gaze[1].x];  //2位
             //pictureBox3.Image = img[gaze[2].y, gaze[2].x];  //3位
@@ -423,8 +549,29 @@ namespace eyeTrackingApp1
                 return false;
         }
 
-        void Data_Registration(Gaze[] gaze, List<Image_Proportion> image_proportion)
+        void Data_Registration(Gaze[] gaze, List<Image_Proportion> image_proportion, int category_flag)
         {
+            double count = 0;
+            
+            switch(category_flag)
+            {
+                case (int)Category.Shirt:
+                    count = change_shirt_image_count;
+                    break;
+
+                case (int)Category.Pant:
+                    count = change_pant_image_count;
+                    break;
+
+                case (int)Category.Shoes:
+                    count = change_shoes_image_count;
+                    break;
+
+                case (int)Category.MAX_CATEGORY:
+                    count = change_image_count;
+                    break;
+            }
+
             for (int a = 0; a < BOX_HEIGHT * BOX_WIDTH; a++)
             {
                 if (gaze[a].count != 0)
@@ -440,7 +587,7 @@ namespace eyeTrackingApp1
                         {
                             //System.Threading.Thread.Sleep(100);
                             tmpData.count += gaze[a].count;
-                            tmpData.proportion = (tmpData.count / change_image_count) * 100;
+                            tmpData.proportion = (tmpData.count / count) * 100;
                             image_proportion[b] = tmpData;
                             check = true;
                         }
@@ -458,7 +605,7 @@ namespace eyeTrackingApp1
                         /*増加するchange_image_countに合わせて「割合」のみ更新*/
                         else
                         {
-                            tmpData.proportion = (tmpData.count / change_image_count) * 100;
+                            tmpData.proportion = (tmpData.count / count) * 100;
                             image_proportion[b] = tmpData;
                         }
                     }
@@ -470,7 +617,8 @@ namespace eyeTrackingApp1
                         {
                             image = image_property[Get_Point(gaze, a)].image,
                             count = gaze[a].count,
-                            proportion = (gaze[a].count / change_image_count) * 100,
+                            proportion = (gaze[a].count / count) * 100
+                            //proportion = (gaze[a].count / change_image_count) * 100,
                         });
                     }
                     /*
@@ -488,7 +636,7 @@ namespace eyeTrackingApp1
             }
 
             image_proportion.Sort();
-            
+
             /*
             for (int b = 0; b < image_proportion.Count; b++)
             {
@@ -496,7 +644,7 @@ namespace eyeTrackingApp1
                 writeLog(s1);
             }
             */
-            string s2 = "change_image_count : " + change_image_count;
+            string s2 = "change_image_count : " + count;//change_image_count;
             writeLog(s2);
             string s3 = "image_proportion.Count : " + image_proportion.Count;
             writeLog(s3);
@@ -679,6 +827,9 @@ namespace eyeTrackingApp1
         
         private void Shirt_Panel_Paint(object sender, PaintEventArgs e)
         {
+            int select_color; //どの色
+            int select_img; //どの画像
+
             //Panel_Paint(e);
             image_property.Clear();
 
@@ -691,23 +842,51 @@ namespace eyeTrackingApp1
                     /*初回のみ*/
                     if (top_image_property.Count == 0)
                     {
+                        //writeLog("1週目以降");
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(shirt_files[select_color].Length);
+                        //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
                         image_property.Add(new Image_Property()
                         {
+
+                            /*
                             image = Image.FromFile(shirt_files[shirt_count]),
                             category = CATEGORY_SHIRT,
                             color = COLOR_RED,
+                            */
+                            image = Image.FromFile(shirt_files[select_color][select_img]),
+                            category = (int)Category.Shirt,
+                            color = select_color
+                            //color = color_str.ToString()
+                            //color = ((Color)Enum.ToObject(typeof(Color), select_color)).ToString()
                         });
 
+                        /*
                         shirt_count++;
                         if (shirt_count >= shirt_files.Length)
                         {
                             shirt_count = 0;
                         }
+                        */
                     }
                     /*2週目以降*/
                     else
                     {
+                        
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(shirt_files[select_color].Length);
+                        //Color sEnum = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                        image_property.Add(new Image_Property()
+                        {
+                            image = Image.FromFile(shirt_files[select_color][select_img]),
+                            category = (int)Category.Shirt,
+                            color = select_color
+                        });
+                        
                         /*～～確定変更箇所～～*/
+                        /*
                         image_property.Add(new Image_Property()
                         {
                             image = Image.FromFile(shirt_files[shirt_count]),
@@ -720,6 +899,7 @@ namespace eyeTrackingApp1
                         {
                             shirt_count = 0;
                         }
+                        */
                         /*～～～～～～～～～～*/
 
                         /*
@@ -753,6 +933,225 @@ namespace eyeTrackingApp1
             */
         }
 
+        private void Pant_Panel_Paint(object sender, PaintEventArgs e)
+        {
+            /*
+            image_property.Clear();
+
+            for (int i = 0; i < BOX_HEIGHT; i++)
+            {
+                for (int j = 0; j < BOX_WIDTH; j++)
+                {
+                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
+
+                    image_property.Add(new Image_Property()
+                    {
+                        image = Image.FromFile(pant_files[pant_count]),
+                        category = (int)Category.Pant,
+                        color = COLOR_RED,
+                    });
+
+                    pant_count++;
+                    if (pant_count >= pant_files.Length)
+                    {
+                        pant_count = 0;
+                    }
+
+                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+                }
+            }
+            */
+            int select_color; //どの色
+            int select_img; //どの画像
+
+            image_property.Clear();
+
+            for (int i = 0; i < BOX_HEIGHT; i++)
+            {
+                for (int j = 0; j < BOX_WIDTH; j++)
+                {
+                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
+
+                    /*初回のみ*/
+                    if (top_image_property.Count == 0)
+                    {
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(pant_files[select_color].Length);
+                        //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                        image_property.Add(new Image_Property()
+                        {
+                            image = Image.FromFile(pant_files[select_color][select_img]),
+                            category = (int)Category.Pant,
+                            color = select_color
+                            //color = color_str.ToString()
+                        });
+                    }
+                    /*2週目以降*/
+                    else
+                    {
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(pant_files[select_color].Length);
+                        //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                        image_property.Add(new Image_Property()
+                        {
+                            image = Image.FromFile(pant_files[select_color][select_img]),
+                            category = (int)Category.Pant,
+                            color = select_color
+                            //color = color_str.ToString()
+                        });
+                    }
+
+                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+                }
+            }
+        }
+
+        private void Shoes_Panel_Paint(object sender, PaintEventArgs e)
+        {
+            /*
+            image_property.Clear();
+
+            for (int i = 0; i < BOX_HEIGHT; i++)
+            {
+                for (int j = 0; j < BOX_WIDTH; j++)
+                {
+                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
+
+                    image_property.Add(new Image_Property()
+                    {
+                        image = Image.FromFile(shoes_files[shoes_count]),
+                        category = (int)Category.Shoes,
+                        color = COLOR_RED,
+                    });
+
+                    shoes_count++;
+                    if (shoes_count >= shoes_files.Length)
+                    {
+                        shoes_count = 0;
+                    }
+
+                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+                }
+            }
+            */
+            int select_color; //どの色
+            int select_img; //どの画像
+
+            image_property.Clear();
+
+            for (int i = 0; i < BOX_HEIGHT; i++)
+            {
+                for (int j = 0; j < BOX_WIDTH; j++)
+                {
+                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
+
+                    /*初回のみ*/
+                    if (top_image_property.Count == 0)
+                    {
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(shoes_files[select_color].Length);
+                        //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                        image_property.Add(new Image_Property()
+                        {
+                            image = Image.FromFile(shoes_files[select_color][select_img]),
+                            category = (int)Category.Shoes,
+                            color = select_color
+                            //color = color_str.ToString()
+                        });
+                    }
+                    /*2週目以降*/
+                    else
+                    {
+                        select_color = r.Next((int)Color.MAX_COLOR);
+                        select_img = r.Next(shoes_files[select_color].Length);
+                        //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                        image_property.Add(new Image_Property()
+                        {
+                            image = Image.FromFile(shoes_files[select_color][select_img]),
+                            category = (int)Category.Shoes,
+                            color = select_color
+                            //color = color_str.ToString()
+                        });
+                    }
+
+                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+                }
+            }
+        }
+
+        private void All_Panel_Paint(object sender, PaintEventArgs e)
+        {
+            int select_category;
+            int select_color;
+            int select_img;
+
+            image_property.Clear();
+
+            for (int i = 0; i < BOX_HEIGHT; i++)
+            {
+                for (int j = 0; j < BOX_WIDTH; j++)
+                {
+                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
+
+                    select_category = r.Next((int)Category.MAX_CATEGORY);
+
+                    switch (select_category)
+                    {
+                        case (int)Category.Shirt : //シャツの場合
+
+                            select_color = r.Next((int)Color.MAX_COLOR);
+                            select_img = r.Next(shirt_files[select_color].Length);
+                            //Color color_str = (Color)Enum.ToObject(typeof(Color), select_color);
+
+                            image_property.Add(new Image_Property()
+                            {
+                                image = Image.FromFile(shirt_files[select_color][select_img]),
+                                category = (int)Category.Shirt,
+                                color = select_color
+                                //color = color_str.ToString()
+                            });
+                            //img[i, j] = Image.FromFile(shirt_files[select_img]);
+                            break;
+                        case (int)Category.Pant : //ズボンの場合
+
+                            select_color = r.Next((int)Color.MAX_COLOR);
+                            select_img = r.Next(pant_files[select_color].Length);
+
+                            image_property.Add(new Image_Property()
+                            {
+                                image = Image.FromFile(pant_files[select_color][select_img]),
+                                category = (int)Category.Pant,
+                                color = select_color
+                                //color = COLOR_RED,
+                            });
+                            //img[i, j] = Image.FromFile(pant_files[select_img]);
+                            break;
+                        case (int)Category.Shoes : //シューズの場合
+
+                            select_color = r.Next((int)Color.MAX_COLOR);
+                            select_img = r.Next(shoes_files.Length);
+
+                            image_property.Add(new Image_Property()
+                            {
+                                image = Image.FromFile(shoes_files[select_color][select_img]),
+                                category = (int)Category.Shoes,
+                                color = select_color
+                                //color = COLOR_RED,
+                            });
+                            //img[i, j] = Image.FromFile(onepiece_files[select_img]);
+                            break;
+                    }
+                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+                    //e.Graphics.DrawImage(img[i, j], j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
+
+                }
+            }
+        }
+
         private void Panel_Paint(PaintEventArgs e)
         {
             /*
@@ -772,115 +1171,6 @@ namespace eyeTrackingApp1
             }
             */
         }
-
-        private void Pant_Panel_Paint(object sender, PaintEventArgs e)
-        {
-            image_property.Clear();
-
-            for (int i = 0; i < BOX_HEIGHT; i++)
-            {
-                for (int j = 0; j < BOX_WIDTH; j++)
-                {
-                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
-
-                    image_property.Add(new Image_Property()
-                    {
-                        image = Image.FromFile(pant_files[pant_count]),
-                        category = CATEGORY_PANT,
-                        color = COLOR_RED,
-                    });
-
-                    pant_count++;
-                    if (pant_count >= pant_files.Length)
-                    {
-                        pant_count = 0;
-                    }
-
-                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
-                }
-            }
-        }
-
-        private void Onepiece_Panel_Paint(object sender, PaintEventArgs e)
-        {
-            image_property.Clear();
-
-            for (int i = 0; i < BOX_HEIGHT; i++)
-            {
-                for (int j = 0; j < BOX_WIDTH; j++)
-                {
-                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
-
-                    image_property.Add(new Image_Property()
-                    {
-                        image = Image.FromFile(shoes_files[onepiece_count]),
-                        category = CATEGORY_SHOES,
-                        color = COLOR_RED,
-                    });
-
-                    onepiece_count++;
-                    if (onepiece_count >= shoes_files.Length)
-                    {
-                        onepiece_count = 0;
-                    }
-
-                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
-                }
-            }
-        }
-
-        private void All_Panel_Paint(object sender, PaintEventArgs e)
-        {
-            int select_files, select_img;
-            image_property.Clear();
-
-            for (int i = 0; i < BOX_HEIGHT; i++)
-            {
-                for (int j = 0; j < BOX_WIDTH; j++)
-                {
-                    int point = (i * (BOX_WIDTH - 1)) + (i + j);
-
-                    select_files = r.Next(MAX_CATEGORY);
-                    switch (select_files)
-                    {
-                        case 0: //シャツの場合
-                            select_img = r.Next(shirt_files.Length - 1);
-                            image_property.Add(new Image_Property()
-                            {
-                                image = Image.FromFile(shirt_files[select_img]),
-                                category = CATEGORY_SHIRT,
-                                color = COLOR_RED,
-                            });
-                            //img[i, j] = Image.FromFile(shirt_files[select_img]);
-                            break;
-                        case 1: //ズボンの場合
-                            select_img = r.Next(pant_files.Length - 1);
-                            image_property.Add(new Image_Property()
-                            {
-                                image = Image.FromFile(pant_files[select_img]),
-                                category = CATEGORY_PANT,
-                                color = COLOR_RED,
-                            });
-                            //img[i, j] = Image.FromFile(pant_files[select_img]);
-                            break;
-                        case 2: //ワンピースの場合
-                            select_img = r.Next(shoes_files.Length - 1);
-                            image_property.Add(new Image_Property()
-                            {
-                                image = Image.FromFile(shoes_files[select_img]),
-                                category = CATEGORY_SHOES,
-                                color = COLOR_RED,
-                            });
-                            //img[i, j] = Image.FromFile(onepiece_files[select_img]);
-                            break;
-                    }
-                    e.Graphics.DrawImage(image_property[point].image, j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
-                    //e.Graphics.DrawImage(img[i, j], j * WIDTH_RATIO, i * HEIGHT_RATIO, WIDTH_RATIO, HEIGHT_RATIO);
-
-                }
-            }
-        }
-
 
         /*----------------------------------------------*/
         /* その他、ボタンやゲームをクリックした際の関数 */

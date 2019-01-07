@@ -306,7 +306,6 @@
             this.label1.Size = new System.Drawing.Size(120, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Onepiece";
-            //this.label1.UseWaitCursor = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -318,7 +317,6 @@
             this.label2.Size = new System.Drawing.Size(62, 27);
             this.label2.TabIndex = 17;
             this.label2.Text = "Heal";
-            //this.label2.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -329,7 +327,6 @@
             this.label3.Size = new System.Drawing.Size(64, 27);
             this.label3.TabIndex = 18;
             this.label3.Text = "Skirt";
-            //this.label3.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -341,7 +338,6 @@
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 20;
             this.label4.Text = "Shoes";
-            //this.label4.UseWaitCursor = true;
             this.label4.Visible = false;
             // 
             // label5
@@ -353,7 +349,6 @@
             this.label5.Size = new System.Drawing.Size(41, 27);
             this.label5.TabIndex = 21;
             this.label5.Text = "All";
-            //this.label5.UseWaitCursor = true;
             // 
             // pictureBox5
             // 
@@ -411,6 +406,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(349, 39);
             this.progressBar1.TabIndex = 23;
+            this.progressBar1.Visible = false;
             // 
             // label6
             // 
@@ -422,6 +418,7 @@
             this.label6.Size = new System.Drawing.Size(108, 27);
             this.label6.TabIndex = 24;
             this.label6.Text = "実行中...";
+            this.label6.Visible = false;
             // 
             // UserControl2
             // 

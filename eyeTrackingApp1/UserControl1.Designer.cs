@@ -79,7 +79,6 @@
             this.textBox_Log.Name = "textBox_Log";
             this.textBox_Log.Size = new System.Drawing.Size(928, 531);
             this.textBox_Log.TabIndex = 1;
-            this.textBox_Log.Visible = false;
             // 
             // shapeContainer1
             // 
@@ -265,7 +264,7 @@
             this.Shoes.TabIndex = 6;
             this.toolTip1.SetToolTip(this.Shoes, "靴の好みを視線から推定します");
             this.Shoes.UseVisualStyleBackColor = false;
-            this.Shoes.Click += new System.EventHandler(this.Onepiece_Click);
+            this.Shoes.Click += new System.EventHandler(this.Shoes_Click);
             // 
             // Pant
             // 
@@ -406,6 +405,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(349, 39);
             this.progressBar1.TabIndex = 23;
+            this.progressBar1.Visible = false;
             // 
             // label6
             // 
@@ -417,6 +417,7 @@
             this.label6.Size = new System.Drawing.Size(108, 27);
             this.label6.TabIndex = 24;
             this.label6.Text = "実行中...";
+            this.label6.Visible = false;
             // 
             // UserControl1
             // 
