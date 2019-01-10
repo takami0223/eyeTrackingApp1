@@ -74,10 +74,10 @@
             // 
             // textBox_Log
             // 
-            this.textBox_Log.Location = new System.Drawing.Point(12, 518);
+            this.textBox_Log.Location = new System.Drawing.Point(12, 132);
             this.textBox_Log.Multiline = true;
             this.textBox_Log.Name = "textBox_Log";
-            this.textBox_Log.Size = new System.Drawing.Size(928, 531);
+            this.textBox_Log.Size = new System.Drawing.Size(928, 917);
             this.textBox_Log.TabIndex = 1;
             // 
             // shapeContainer1
@@ -325,7 +325,6 @@
             this.label3.Size = new System.Drawing.Size(65, 27);
             this.label3.TabIndex = 18;
             this.label3.Text = "Pant";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
