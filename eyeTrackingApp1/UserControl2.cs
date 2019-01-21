@@ -328,8 +328,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Onepiece);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -345,8 +345,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Skirt);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -363,8 +363,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Heal);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -381,8 +381,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.MAX_CATEGORY);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();

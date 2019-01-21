@@ -346,8 +346,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Shirt);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       ["+panel_change_count+"]回目");
                 panel.Refresh();
@@ -366,8 +366,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Pant);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -384,8 +384,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.Shoes);
 
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -402,8 +402,8 @@ namespace eyeTrackingApp1
             Before_Process();
             Panel panel = Set_Panel((int)Category.MAX_CATEGORY);
             
-            for (int i = 0; i < 3; i++)
-            //while(!change_finish_flag)
+            //for (int i = 0; i < 3; i++)
+            while(!change_finish_flag)
             {
                 writeLog("       [" + panel_change_count + "]回目");
                 panel.Refresh();
@@ -473,7 +473,7 @@ namespace eyeTrackingApp1
                 gaze[i].count = 0;
             }
 
-            //System.Threading.Thread.Sleep(5000); //測定無しの状態で画像を見せるため
+            System.Threading.Thread.Sleep(5000); //測定無しの状態で画像を見せるため
 
             gazePointDataStream.GazePoint((gazePointX, gazePointY, ts) =>
             {
@@ -489,9 +489,9 @@ namespace eyeTrackingApp1
                 }
             });
 
-            //System.Threading.Thread.Sleep(15000); //測定時間
+            System.Threading.Thread.Sleep(15000); //測定時間
 
-            System.Threading.Thread.Sleep(5000);
+            //System.Threading.Thread.Sleep(5000);
 
             host.DisableConnection();
 
@@ -667,7 +667,7 @@ namespace eyeTrackingApp1
             //foreach (int x in temp) writeLog("[" + x + "]");
             writeLog("final-gudge:" + (temp_color[0] - temp_color[1]));
 
-            if ((temp_category[0]-temp_category[1] >= 100) && (temp_color[0]-temp_color[1] >= 200))
+            if ((temp_category[0]-temp_category[1] >= 150) && (temp_color[0]-temp_color[1] >= 200))
             {
                 change_finish_flag = true;
             }
@@ -1492,6 +1492,5 @@ namespace eyeTrackingApp1
             textBox_Log.SelectionLength = 0;
             textBox_Log.SelectedText = /* "[" + DateTime.Now.ToString() + "]" + */ logText + "\r\n";
         }
-        
     }
 }

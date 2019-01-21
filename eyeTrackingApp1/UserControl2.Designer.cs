@@ -70,12 +70,14 @@
             this.Notice1 = new System.Windows.Forms.Button();
             this.Data_Delete = new System.Windows.Forms.Button();
             this.Notice2 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_Log
@@ -184,7 +186,7 @@
             this.Face_game.BackColor = System.Drawing.Color.White;
             this.Face_game.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Face_game.Image = ((System.Drawing.Image)(resources.GetObject("Face_game.Image")));
-            this.Face_game.Location = new System.Drawing.Point(1789, 881);
+            this.Face_game.Location = new System.Drawing.Point(1789, 756);
             this.Face_game.Name = "Face_game";
             this.Face_game.Size = new System.Drawing.Size(100, 100);
             this.Face_game.TabIndex = 15;
@@ -197,7 +199,7 @@
             this.Wally_game.BackColor = System.Drawing.Color.White;
             this.Wally_game.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Wally_game.Image = global::eyeTrackingApp1.Properties.Resources.wally_icon;
-            this.Wally_game.Location = new System.Drawing.Point(1789, 726);
+            this.Wally_game.Location = new System.Drawing.Point(1789, 615);
             this.Wally_game.Name = "Wally_game";
             this.Wally_game.Size = new System.Drawing.Size(100, 100);
             this.Wally_game.TabIndex = 14;
@@ -371,9 +373,9 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.SlateGray;
-            this.pictureBox5.Location = new System.Drawing.Point(1754, 650);
+            this.pictureBox5.Location = new System.Drawing.Point(1754, 576);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(163, 408);
+            this.pictureBox5.Size = new System.Drawing.Size(163, 482);
             this.pictureBox5.TabIndex = 19;
             this.pictureBox5.TabStop = false;
             // 
@@ -462,12 +464,13 @@
             // 
             // Data_Delete
             // 
-            this.Data_Delete.Location = new System.Drawing.Point(1596, 824);
+            this.Data_Delete.BackColor = System.Drawing.Color.White;
+            this.Data_Delete.Image = ((System.Drawing.Image)(resources.GetObject("Data_Delete.Image")));
+            this.Data_Delete.Location = new System.Drawing.Point(1800, 941);
             this.Data_Delete.Name = "Data_Delete";
-            this.Data_Delete.Size = new System.Drawing.Size(75, 63);
+            this.Data_Delete.Size = new System.Drawing.Size(75, 75);
             this.Data_Delete.TabIndex = 30;
-            this.Data_Delete.Text = "button1";
-            this.Data_Delete.UseVisualStyleBackColor = true;
+            this.Data_Delete.UseVisualStyleBackColor = false;
             this.Data_Delete.Click += new System.EventHandler(this.Data_Delete_Click);
             // 
             // Notice2
@@ -482,13 +485,23 @@
             this.Notice2.UseVisualStyleBackColor = false;
             this.Notice2.Visible = false;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.IndianRed;
+            this.pictureBox7.Location = new System.Drawing.Point(1754, 895);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(163, 163);
+            this.pictureBox7.TabIndex = 32;
+            this.pictureBox7.TabStop = false;
+            // 
             // UserControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.Controls.Add(this.Notice2);
             this.Controls.Add(this.Data_Delete);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.Notice2);
             this.Controls.Add(this.Notice1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Panel_Eye);
@@ -526,6 +539,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,5 +586,6 @@
         private System.Windows.Forms.Button Notice1;
         private System.Windows.Forms.Button Data_Delete;
         private System.Windows.Forms.Button Notice2;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

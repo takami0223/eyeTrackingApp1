@@ -42,6 +42,16 @@
             this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.Change = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Panel_Eye = new System.Windows.Forms.Button();
+            this.Face_game = new System.Windows.Forms.Button();
+            this.Wally_game = new System.Windows.Forms.Button();
+            this.Setting = new System.Windows.Forms.Button();
+            this.Human = new System.Windows.Forms.Button();
+            this.Add_data = new System.Windows.Forms.Button();
+            this.All = new System.Windows.Forms.Button();
+            this.Shirt = new System.Windows.Forms.Button();
+            this.Shoes = new System.Windows.Forms.Button();
+            this.Pant = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,16 +64,6 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.Notice2 = new System.Windows.Forms.Button();
             this.Notice1 = new System.Windows.Forms.Button();
-            this.Panel_Eye = new System.Windows.Forms.Button();
-            this.Face_game = new System.Windows.Forms.Button();
-            this.Wally_game = new System.Windows.Forms.Button();
-            this.Setting = new System.Windows.Forms.Button();
-            this.Human = new System.Windows.Forms.Button();
-            this.Add_data = new System.Windows.Forms.Button();
-            this.All = new System.Windows.Forms.Button();
-            this.Shirt = new System.Windows.Forms.Button();
-            this.Shoes = new System.Windows.Forms.Button();
-            this.Pant = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -179,133 +179,6 @@
             this.toolTip1.SetToolTip(this.Change, "カテゴリをレディースに変更");
             this.Change.UseVisualStyleBackColor = false;
             this.Change.Click += new System.EventHandler(this.Change_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label1.Location = new System.Drawing.Point(351, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 27);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Shirt";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label2.Location = new System.Drawing.Point(1480, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 27);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Shoes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label3.Location = new System.Drawing.Point(917, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 27);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Pant";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Gainsboro;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label4.Location = new System.Drawing.Point(1808, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Shoes";
-            this.label4.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label5.Location = new System.Drawing.Point(641, 495);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 27);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "All";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(487, 942);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(349, 39);
-            this.progressBar1.TabIndex = 23;
-            this.progressBar1.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label6.Location = new System.Drawing.Point(612, 912);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 27);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "実行中...";
-            this.label6.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label7.Location = new System.Drawing.Point(1214, 495);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 27);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Result";
-            // 
-            // Data_Delete
-            // 
-            this.Data_Delete.BackColor = System.Drawing.Color.White;
-            this.Data_Delete.Image = ((System.Drawing.Image)(resources.GetObject("Data_Delete.Image")));
-            this.Data_Delete.Location = new System.Drawing.Point(1800, 941);
-            this.Data_Delete.Name = "Data_Delete";
-            this.Data_Delete.Size = new System.Drawing.Size(75, 75);
-            this.Data_Delete.TabIndex = 29;
-            this.Data_Delete.UseVisualStyleBackColor = false;
-            this.Data_Delete.Click += new System.EventHandler(this.Data_Delete_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.IndianRed;
-            this.pictureBox7.Location = new System.Drawing.Point(1754, 895);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(163, 163);
-            this.pictureBox7.TabIndex = 30;
-            this.pictureBox7.TabStop = false;
-            // 
-            // Notice2
-            // 
-            this.Notice2.BackColor = System.Drawing.Color.Red;
-            this.Notice2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Notice2.Image = ((System.Drawing.Image)(resources.GetObject("Notice2.Image")));
-            this.Notice2.Location = new System.Drawing.Point(1855, 206);
-            this.Notice2.Name = "Notice2";
-            this.Notice2.Size = new System.Drawing.Size(70, 70);
-            this.Notice2.TabIndex = 28;
-            this.Notice2.UseVisualStyleBackColor = false;
-            this.Notice2.Visible = false;
-            // 
-            // Notice1
-            // 
-            this.Notice1.BackColor = System.Drawing.Color.Red;
-            this.Notice1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Notice1.Image = ((System.Drawing.Image)(resources.GetObject("Notice1.Image")));
-            this.Notice1.Location = new System.Drawing.Point(1311, 538);
-            this.Notice1.Name = "Notice1";
-            this.Notice1.Size = new System.Drawing.Size(70, 70);
-            this.Notice1.TabIndex = 27;
-            this.Notice1.UseVisualStyleBackColor = false;
-            this.Notice1.Visible = false;
             // 
             // Panel_Eye
             // 
@@ -443,6 +316,133 @@
             this.toolTip1.SetToolTip(this.Pant, "ズボンの好みを視線から推定します");
             this.Pant.UseVisualStyleBackColor = false;
             this.Pant.Click += new System.EventHandler(this.Pant_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label1.Location = new System.Drawing.Point(351, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 27);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Shirt";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label2.Location = new System.Drawing.Point(1480, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 27);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Shoes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label3.Location = new System.Drawing.Point(917, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 27);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Pant";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Gainsboro;
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 15F);
+            this.label4.Location = new System.Drawing.Point(1808, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Shoes";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label5.Location = new System.Drawing.Point(641, 495);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 27);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "All";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(487, 942);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(349, 39);
+            this.progressBar1.TabIndex = 23;
+            this.progressBar1.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label6.Location = new System.Drawing.Point(612, 912);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 27);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "実行中...";
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label7.Location = new System.Drawing.Point(1214, 495);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 27);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Result";
+            // 
+            // Data_Delete
+            // 
+            this.Data_Delete.BackColor = System.Drawing.Color.White;
+            this.Data_Delete.Image = ((System.Drawing.Image)(resources.GetObject("Data_Delete.Image")));
+            this.Data_Delete.Location = new System.Drawing.Point(1800, 941);
+            this.Data_Delete.Name = "Data_Delete";
+            this.Data_Delete.Size = new System.Drawing.Size(75, 75);
+            this.Data_Delete.TabIndex = 29;
+            this.Data_Delete.UseVisualStyleBackColor = false;
+            this.Data_Delete.Click += new System.EventHandler(this.Data_Delete_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.IndianRed;
+            this.pictureBox7.Location = new System.Drawing.Point(1754, 895);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(163, 163);
+            this.pictureBox7.TabIndex = 30;
+            this.pictureBox7.TabStop = false;
+            // 
+            // Notice2
+            // 
+            this.Notice2.BackColor = System.Drawing.Color.Red;
+            this.Notice2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Notice2.Image = ((System.Drawing.Image)(resources.GetObject("Notice2.Image")));
+            this.Notice2.Location = new System.Drawing.Point(1855, 206);
+            this.Notice2.Name = "Notice2";
+            this.Notice2.Size = new System.Drawing.Size(70, 70);
+            this.Notice2.TabIndex = 28;
+            this.Notice2.UseVisualStyleBackColor = false;
+            this.Notice2.Visible = false;
+            // 
+            // Notice1
+            // 
+            this.Notice1.BackColor = System.Drawing.Color.Red;
+            this.Notice1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Notice1.Image = ((System.Drawing.Image)(resources.GetObject("Notice1.Image")));
+            this.Notice1.Location = new System.Drawing.Point(1311, 538);
+            this.Notice1.Name = "Notice1";
+            this.Notice1.Size = new System.Drawing.Size(70, 70);
+            this.Notice1.TabIndex = 27;
+            this.Notice1.UseVisualStyleBackColor = false;
+            this.Notice1.Visible = false;
             // 
             // pictureBox6
             // 
