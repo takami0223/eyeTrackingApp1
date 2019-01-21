@@ -29,39 +29,28 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabControl1.SuspendLayout();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.No_data_label1 = new System.Windows.Forms.Label();
-            this.No_data_label2 = new System.Windows.Forms.Label();
-            this.No_data_label3 = new System.Windows.Forms.Label();
-            this.No_data_label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.No_data_label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.No_data_label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.No_data_label3 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.No_data_label4 = new System.Windows.Forms.Label();
+            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            this.panel4.AutoScroll = true;
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.No_data_label4);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(444, 409);
-            this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tabControl1
             // 
@@ -74,6 +63,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(452, 435);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -85,51 +75,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Shirt";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(444, 409);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Pant";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(444, 409);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Shoes";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(444, 409);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "All_Content";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // No_data_label4
-            // 
-            this.No_data_label4.AutoSize = true;
-            this.No_data_label4.Font = new System.Drawing.Font("MS UI Gothic", 40F);
-            this.No_data_label4.Location = new System.Drawing.Point(125, 165);
-            this.No_data_label4.Name = "No_data_label4";
-            this.No_data_label4.Size = new System.Drawing.Size(207, 54);
-            this.No_data_label4.TabIndex = 0;
-            this.No_data_label4.Text = "No Data";
             // 
             // panel1
             // 
@@ -150,6 +95,17 @@
             this.No_data_label1.TabIndex = 1;
             this.No_data_label1.Text = "No Data";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(444, 409);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Pant";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
@@ -168,6 +124,16 @@
             this.No_data_label2.Size = new System.Drawing.Size(207, 54);
             this.No_data_label2.TabIndex = 2;
             this.No_data_label2.Text = "No Data";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(444, 409);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Shoes";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -188,7 +154,37 @@
             this.No_data_label3.TabIndex = 3;
             this.No_data_label3.Text = "No Data";
             // 
-            // Form3
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(444, 409);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "All_Content";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.AutoScroll = true;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.No_data_label4);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(444, 409);
+            this.panel4.TabIndex = 0;
+            // 
+            // No_data_label4
+            // 
+            this.No_data_label4.AutoSize = true;
+            this.No_data_label4.Font = new System.Drawing.Font("MS UI Gothic", 40F);
+            this.No_data_label4.Location = new System.Drawing.Point(125, 165);
+            this.No_data_label4.Name = "No_data_label4";
+            this.No_data_label4.Size = new System.Drawing.Size(207, 54);
+            this.No_data_label4.TabIndex = 0;
+            this.No_data_label4.Text = "No Data";
+            // 
+            // Form3_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,23 +192,23 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form3";
+            this.Name = "Form3_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "あなたの記録";
             this.Load += new System.EventHandler(this.Form3_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

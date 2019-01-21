@@ -157,30 +157,30 @@ namespace eyeTrackingApp1
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (((TabControl)sender).SelectedIndex)
+            {
+                case 0:
+                    this.Text = "あなたの記録(シャツのみ)";
+                    panel1.AutoScrollPosition = new Point(0, 0);
+                    break;
 
-        }
+                case 1:
+                    this.Text = "あなたの記録(ズボンのみ)";
+                    panel2.AutoScrollPosition = new Point(0, 0);
+                    break;
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            this.Text = "あなたの記録(シャツのみ)";
-            this.AutoScrollPosition = new Point(0, 0);
-        }
+                case 2:
+                    this.Text = "あなたの記録(靴のみ)";
+                    panel3.AutoScrollPosition = new Point(0, 0);
+                    break;
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-            this.Text = "あなたの記録(ズボンのみ)";
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-            this.Text = "あなたの記録(靴のみ)";
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-            this.Text = "あなたの記録(すべての記録)";
+                case 3:
+                    this.Text = "あなたの記録(すべての記録)";
+                    panel4.AutoScrollPosition = new Point(0, 0);
+                    break;
+            }
         }
     }
 }

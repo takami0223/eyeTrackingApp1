@@ -44,9 +44,16 @@ namespace eyeTrackingApp1
             }
             else
             {
-                this.Controls.Clear();
-                var uc = Activator.CreateInstance(t) as UserControl;
-                this.Controls.Add(uc);
+                try
+                {
+                    this.Controls.Clear();
+                    var uc = Activator.CreateInstance(t) as UserControl;
+                    this.Controls.Add(uc);
+                }
+                catch (System.Reflection.TargetInvocationException ex)
+                {
+                    throw ex.InnerException;
+                }
             }
         }
 

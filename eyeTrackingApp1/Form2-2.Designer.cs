@@ -1,6 +1,6 @@
 ﻿namespace eyeTrackingApp1
 {
-    partial class Form2
+    partial class Form2_2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2_2));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label_image_count = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -252,7 +252,7 @@
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.checkBox4.Location = new System.Drawing.Point(113, 452);
+            this.checkBox4.Location = new System.Drawing.Point(113, 441);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(58, 31);
             this.checkBox4.TabIndex = 18;
@@ -266,7 +266,7 @@
             this.checkBox5.Checked = true;
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.checkBox5.Location = new System.Drawing.Point(214, 452);
+            this.checkBox5.Location = new System.Drawing.Point(214, 441);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(58, 31);
             this.checkBox5.TabIndex = 19;
@@ -280,14 +280,14 @@
             this.checkBox6.Checked = true;
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox6.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.checkBox6.Location = new System.Drawing.Point(314, 452);
+            this.checkBox6.Location = new System.Drawing.Point(314, 441);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(100, 31);
             this.checkBox6.TabIndex = 20;
             this.checkBox6.Text = "その他";
             this.checkBox6.UseVisualStyleBackColor = false;
             // 
-            // Form2
+            // Form2_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,7 +309,7 @@
             this.Controls.Add(this.label_image_count);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.shapeContainer1);
-            this.Name = "Form2";
+            this.Name = "Form2_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "設定";
             this.Load += new System.EventHandler(this.Form2_Load);

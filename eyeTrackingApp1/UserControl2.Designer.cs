@@ -51,6 +51,7 @@
             this.Onepiece = new System.Windows.Forms.Button();
             this.Skirt = new System.Windows.Forms.Button();
             this.Heal = new System.Windows.Forms.Button();
+            this.Panel_Eye = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +66,10 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Notice1 = new System.Windows.Forms.Button();
+            this.Data_Delete = new System.Windows.Forms.Button();
+            this.Notice2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -113,7 +118,7 @@
             this.ovalShape7.BorderWidth = 3;
             this.ovalShape7.Location = new System.Drawing.Point(1102, 526);
             this.ovalShape7.Name = "ovalShape7";
-            this.ovalShape7.Size = new System.Drawing.Size(280, 280);
+            this.ovalShape7.Size = new System.Drawing.Size(300, 300);
             // 
             // ovalShape6
             // 
@@ -297,6 +302,20 @@
             this.Heal.UseVisualStyleBackColor = false;
             this.Heal.Click += new System.EventHandler(this.Heal_Click);
             // 
+            // Panel_Eye
+            // 
+            this.Panel_Eye.BackColor = System.Drawing.Color.White;
+            this.Panel_Eye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel_Eye.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Panel_Eye.Image = ((System.Drawing.Image)(resources.GetObject("Panel_Eye.Image")));
+            this.Panel_Eye.Location = new System.Drawing.Point(1102, 526);
+            this.Panel_Eye.Name = "Panel_Eye";
+            this.Panel_Eye.Size = new System.Drawing.Size(301, 301);
+            this.Panel_Eye.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.Panel_Eye, "各測定結果の上位データを表示します");
+            this.Panel_Eye.UseVisualStyleBackColor = false;
+            this.Panel_Eye.Click += new System.EventHandler(this.Panel_Eye_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -306,7 +325,6 @@
             this.label1.Size = new System.Drawing.Size(120, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Onepiece";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -420,11 +438,60 @@
             this.label6.Text = "実行中...";
             this.label6.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.label7.Location = new System.Drawing.Point(1210, 496);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 27);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Result";
+            // 
+            // Notice1
+            // 
+            this.Notice1.BackColor = System.Drawing.Color.Red;
+            this.Notice1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Notice1.Image = ((System.Drawing.Image)(resources.GetObject("Notice1.Image")));
+            this.Notice1.Location = new System.Drawing.Point(1309, 540);
+            this.Notice1.Name = "Notice1";
+            this.Notice1.Size = new System.Drawing.Size(70, 70);
+            this.Notice1.TabIndex = 28;
+            this.Notice1.UseVisualStyleBackColor = false;
+            this.Notice1.Visible = false;
+            // 
+            // Data_Delete
+            // 
+            this.Data_Delete.Location = new System.Drawing.Point(1596, 824);
+            this.Data_Delete.Name = "Data_Delete";
+            this.Data_Delete.Size = new System.Drawing.Size(75, 63);
+            this.Data_Delete.TabIndex = 30;
+            this.Data_Delete.Text = "button1";
+            this.Data_Delete.UseVisualStyleBackColor = true;
+            this.Data_Delete.Click += new System.EventHandler(this.Data_Delete_Click);
+            // 
+            // Notice2
+            // 
+            this.Notice2.BackColor = System.Drawing.Color.Red;
+            this.Notice2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Notice2.Image = ((System.Drawing.Image)(resources.GetObject("Notice2.Image")));
+            this.Notice2.Location = new System.Drawing.Point(1850, 205);
+            this.Notice2.Name = "Notice2";
+            this.Notice2.Size = new System.Drawing.Size(70, 70);
+            this.Notice2.TabIndex = 31;
+            this.Notice2.UseVisualStyleBackColor = false;
+            this.Notice2.Visible = false;
+            // 
             // UserControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
+            this.Controls.Add(this.Notice2);
+            this.Controls.Add(this.Data_Delete);
+            this.Controls.Add(this.Notice1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Panel_Eye);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.Face_game);
             this.Controls.Add(this.Wally_game);
@@ -500,5 +567,10 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button Panel_Eye;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Notice1;
+        private System.Windows.Forms.Button Data_Delete;
+        private System.Windows.Forms.Button Notice2;
     }
 }

@@ -11,13 +11,13 @@ using System.Runtime.InteropServices;
 
 namespace eyeTrackingApp1
 {
-    public partial class Form2 : Form
+    public partial class Form2_2 : Form
     {
         /*--------------------------------*/
         /*コンボボックスのデータ関連クラス*/
         /*--------------------------------*/
 
-        public static bool[] color_flag = new bool[(int)(UserControl1.Color.MAX_COLOR)] { true, true, true, true, true, true };
+        public static bool[] color_flag = new bool[(int)(UserControl2.Color.MAX_COLOR)] { true, true, true, true, true, true };
         static int past_index = 1; //前の選択を記憶
 
         public class CmbObject
@@ -37,7 +37,7 @@ namespace eyeTrackingApp1
             }
         }
 
-        public Form2()
+        public Form2_2()
         {
             InitializeComponent();
             Opacity = 0;
@@ -91,7 +91,7 @@ namespace eyeTrackingApp1
         /*他フォームに値を返す関数*/
         static public Ratio_Size ShowMiniForm()
         {
-            Form2 f = new Form2();
+            Form2_2 f = new Form2_2();
             f.ShowDialog();
             Ratio_Size receiveText = f.ReturnValue;
             f.Dispose();
@@ -117,7 +117,7 @@ namespace eyeTrackingApp1
             color_flag[4] = checkBox5.Checked;
             color_flag[5] = checkBox6.Checked;
 
-            if(color_flag[0] || color_flag[1] || color_flag[2] || color_flag[3] || color_flag[4] || color_flag[5])
+            if (color_flag[0] || color_flag[1] || color_flag[2] || color_flag[3] || color_flag[4] || color_flag[5])
             this.Close();
         }
 
